@@ -1,15 +1,15 @@
 import pdb
-from models.game import Game
+from models.match import Match
 from models.team import Team
 from models.league import League
 
-import repositories.game_repository as game_repository
+import repositories.match_repository as match_repository
 import repositories.league_repository as league_repository
 import repositories.team_repository as team_repository
 
-game_repository.delete_all()
+match_repository.delete_all()
 league_repository.delete_all()
-game_repository.delete_all()
+team_repository.delete_all()
 
 team1 = Team("Atlanta", "FaZe", 280)
 team_repository.save(team1)
@@ -46,3 +46,9 @@ team_repository.save(team11)
 
 team12 = Team("LA", "Guerrillas", 50)
 team_repository.save(team12)
+
+
+
+
+
+pdb.set_trace()
