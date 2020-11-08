@@ -1,5 +1,5 @@
 DROP TABLE league;
-DROP TABLE games;
+DROP TABLE matches;
 DROP TABLE teams;
 
 CREATE TABLE teams (
@@ -9,12 +9,12 @@ CREATE TABLE teams (
     points INT
 );
 
-CREATE TABLE games (
-    id SERIAL PRIMARY KEY,
+CREATE TABLE matches (
+    id SERIAL PRIMARY KEY
 );
 
 CREATE TABLE league (
     id SERIAL PRIMARY KEY,
     team_id INT REFERENCES teams(id) ON DELETE CASCADE,
-    game_id INT REFERENCES games(id) ON DELETE CASCADE
+    match_id INT REFERENCES matches(id) ON DELETE CASCADE
 );
