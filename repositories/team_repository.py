@@ -8,3 +8,15 @@ def save(team):
     results = run_sql(sql, values)
     team.id = results[0]['id']
     return team
+
+def select_all():
+    teams = []
+
+    sql = "SELECT * FROM teams"
+    results = run_sql(sql)
+
+    for row in results:
+        team = Team(row['city'], row['name'], row['points'], row['id'])
+        teams.append(team)
+    return teams
+
