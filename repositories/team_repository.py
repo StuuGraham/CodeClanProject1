@@ -29,3 +29,12 @@ def select(id):
     if result is not None:
         team = Team(result['city'], result['name'], result['points'], result['id'])
     return team
+
+def delete_all():
+    sql = "DELETE FROM teams"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM teams WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
