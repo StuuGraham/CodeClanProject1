@@ -50,6 +50,29 @@ team_repository.save(team11)
 team12 = Team("LA", "Guerrillas", 50, league)
 team_repository.save(team12)
 
+match1 = Match(team1, team2)
+match1.play_match(team1, team2)
+match_repository.save(match1)
+
+match2 = Match(team3, team4)
+match2.play_match(team3, team4)
+match_repository.save(match2)
+
+match3 = Match(team5, team6)
+match3.play_match(team5, team6)
+match_repository.save(match3)
+
+match4 = Match(team7, team8)
+match4.play_match(team7, team8)
+match_repository.save(match4)
+
+match5 = Match(team9, team10)
+match5.play_match(team9, team10)
+match_repository.save(match5)
+
+match6 = Match(team11, team12)
+match6.play_match(team11, team12)
+match_repository.save(match6)
 
 
 
