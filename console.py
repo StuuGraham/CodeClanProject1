@@ -7,7 +7,7 @@ import repositories.match_repository as match_repository
 import repositories.league_repository as league_repository
 import repositories.team_repository as team_repository
 
-#match_repository.delete_all()
+match_repository.delete_all()
 league_repository.delete_all()
 team_repository.delete_all()
 
@@ -50,31 +50,28 @@ team_repository.save(team11)
 team12 = Team("LA", "Guerrillas", 50, league)
 team_repository.save(team12)
 
-match1 = Match(team1, team2)
+match1 = Match(team1, team2, league)
 match1.play_match(team1, team2)
 match_repository.save(match1)
 
-match2 = Match(team3, team4)
+match2 = Match(team3, team4, league)
 match2.play_match(team3, team4)
 match_repository.save(match2)
 
-match3 = Match(team5, team6)
+match3 = Match(team5, team6, league)
 match3.play_match(team5, team6)
 match_repository.save(match3)
 
-match4 = Match(team7, team8)
+match4 = Match(team7, team8, league)
 match4.play_match(team7, team8)
 match_repository.save(match4)
 
-match5 = Match(team9, team10)
+match5 = Match(team9, team10, league)
 match5.play_match(team9, team10)
 match_repository.save(match5)
 
-match6 = Match(team11, team12)
+match6 = Match(team11, team12, league)
 match6.play_match(team11, team12)
 match_repository.save(match6)
-
-
-
 
 pdb.set_trace()
