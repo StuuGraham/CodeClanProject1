@@ -30,10 +30,10 @@ def create_match():
     team1 = request.form["team1"]
     team2 = request.form["team2"]
     league = request.form["league"]
-    winner = match.play_match(team1, team2)
 
     # league = league_repository.select(league_id) # ????
-    match = Match(team1, team2, league, winner)
+    match = Match(team1, team2, league)
+    match.play_match()
     match_repository.save(match)
     return redirect ('/matches')
 

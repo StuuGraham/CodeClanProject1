@@ -13,10 +13,8 @@ class Match:
         winner = random.randint(0,1)
         if 0 == winner:
             self.winner = self.team1
-            return self.team1.city + self.team1.name + " wins!"
         else:
             self.winner = self.team2
-            return self.team2.city + self.team2.name + " wins!"
 
     # This will function similar to the Rock, Paper, Scissors homework.
     # Function should take in two teams and produce a winner at random.
