@@ -6,7 +6,7 @@ from controllers.teams_controller import teams_blueprint
 
 app = Flask(__name__)
 
-app.register_blueprint(league_blueprint)
+app.register_blueprint(leagues_blueprint)
 app.register_blueprint(matches_blueprint)
 app.register_blueprint(teams_blueprint)
 
