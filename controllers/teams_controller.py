@@ -26,7 +26,7 @@ def create_team():
     points = 0
     league_id = request.form["league_id"]
 
-    league = league_repository.select(league_id)
+    league = league_repository.select(league_id) # ????
     team = Team(city, name, points, league)
     team_repository.save(team)
     return redirect ('/teams')
