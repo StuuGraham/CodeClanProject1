@@ -7,6 +7,7 @@ CREATE TABLE teams (
     city VARCHAR(255),
     name VARCHAR(255),
     points INT
+    league_id INT REFERENCES leagues(id) ON DELETE CASCADE,
 );
 
 CREATE TABLE matches (
@@ -15,6 +16,7 @@ CREATE TABLE matches (
 
 CREATE TABLE leagues (
     id SERIAL PRIMARY KEY,
-    team_id INT REFERENCES teams(id) ON DELETE CASCADE,
-    match_id INT REFERENCES matches(id) ON DELETE CASCADE
+    year VARCHAR(255)
+    -- team_id INT REFERENCES teams(id) ON DELETE CASCADE,
+    -- match_id INT REFERENCES matches(id) ON DELETE CASCADE
 );

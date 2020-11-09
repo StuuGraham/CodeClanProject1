@@ -14,40 +14,40 @@ team_repository.delete_all()
 league = League("Call of Duty", "2019/20")
 league_repository.save(league)
 
-team1 = Team("Atlanta", "FaZe", 280, "Call of Duty")
+team1 = Team("Atlanta", "FaZe", 280, league)
 team_repository.save(team1)
 
-team2 = Team("Dallas", "Empire", 260, "Call of Duty")
+team2 = Team("Dallas", "Empire", 260, league)
 team_repository.save(team2)
 
-team3 = Team("Florida", "Mutineers", 230, "Call of Duty")
+team3 = Team("Florida", "Mutineers", 230, league)
 team_repository.save(team3)
 
-team4 = Team("Chicago", "Huntsmen", 230, "Call of Duty")
+team4 = Team("Chicago", "Huntsmen", 230, league)
 team_repository.save(team4)
 
-team5 = Team("New York", "Subliners", 140, "Call of Duty")
+team5 = Team("New York", "Subliners", 140, league)
 team_repository.save(team5)
 
-team6 = Team("London", "Royal Ravens", 120, "Call of Duty")
+team6 = Team("London", "Royal Ravens", 120, league)
 team_repository.save(team6)
 
-team7 = Team("Toronto", "Ultra", 120, "Call of Duty")
+team7 = Team("Toronto", "Ultra", 120, league)
 team_repository.save(team7)
 
-team8 = Team("Minnesota", "Rokkr", 120, "Call of Duty")
+team8 = Team("Minnesota", "Rokkr", 120, league)
 team_repository.save(team8)
 
-team9 = Team("LA", "Optic Gaming", 100, "Call of Duty")
+team9 = Team("LA", "Optic Gaming", 100, league)
 team_repository.save(team9)
 
-team10 = Team("Paris", "Legion", 100, "Call of Duty")
+team10 = Team("Paris", "Legion", 100, league)
 team_repository.save(team10)
 
-team11 = Team("Seattle", "Surge", 50, "Call of Duty")
+team11 = Team("Seattle", "Surge", 50, league)
 team_repository.save(team11)
 
-team12 = Team("LA", "Guerrillas", 50, "Call of Duty")
+team12 = Team("LA", "Guerrillas", 50, league)
 team_repository.save(team12)
 
 
