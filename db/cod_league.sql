@@ -1,4 +1,4 @@
-DROP TABLE league;
+DROP TABLE leagues;
 DROP TABLE matches;
 DROP TABLE teams;
 
@@ -13,7 +13,7 @@ CREATE TABLE matches (
     id SERIAL PRIMARY KEY
 );
 
-CREATE TABLE league (
+CREATE TABLE leagues (
     id SERIAL PRIMARY KEY,
     team_id INT REFERENCES teams(id) ON DELETE CASCADE,
     match_id INT REFERENCES matches(id) ON DELETE CASCADE
