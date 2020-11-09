@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.team import Team
 from models.match import Match
+from models.league import League
 
 def save(team):
     sql = "INSERT INTO teams(city, name, points) VALUES (%s, %s, %s) RETURNING id"
