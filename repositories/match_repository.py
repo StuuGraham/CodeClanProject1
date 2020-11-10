@@ -6,9 +6,10 @@ from repositories import league_repository, team_repository
 
 def save(match):
     sql = "INSERT INTO matches(team1_id, team2_id, league_id, winner) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [match.team1.id, match.team2.id, match.league.id, match.winner]
+    values = [match.team1.id, match.team2.id, match.league.id, match.winner.name]
     results = run_sql(sql, values)
-    match.id = results[0]['id']
+    id = results[0]['id']
+    match.id = id
     return match
 
 def select_all():
