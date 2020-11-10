@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Start Your Own Team!</h1>
+<section id="new-form">
+    <form action="/teams" method="post">
+        <div>
+            <label for="city">Choose Your City To Represent:</label>
+            <input type="text" id="city" name="city" placeholder="Where is your team based?" required autofocus>
+        </div>
+
+        <div>
+            <label for="name">Choose Your Team's Name:</label>
+            <input type="text" id="name" name="name" placeholder="Pick your team name!" required>
+        </div>
+
+        <div>
+            <label for="points">New Teams Start On 0 Points:</label>
+            <option value="points">0</option>
+        </div>
+
+        <div>
+            <label for="league">What League Does Your Team Play In?</label>
+            <select name="league_id" id="league">
+                {% for league in leagues %}
+                <option value="{{league.id}}">{{league.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input class="btn btn--action" type='submit' value="Create The Team">
+</form>
+</section>
+{% endblock %}

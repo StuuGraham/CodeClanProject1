@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{team.city}} {{team.name}}</h1>
+
+<h3>Team Info</h3>
+<ul>
+        <li> {{team.city}} play in the {{team.league.name}} League</li>
+        <li> They scored {{team.points}} points in the {{team.league.year}} season!</li>
+</ul>
+{% endblock content %}

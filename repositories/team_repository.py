@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.team import Team
 from models.match import Match
 from models.league import League
-from repositories import league_repository
+from repositories import league_repository, match_repository
 
 def save(team):
     sql = "INSERT INTO teams(city, name, points, league_id) VALUES (%s, %s, %s, %s) RETURNING id"
@@ -30,7 +30,8 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        team = Team(result['city'], result['name'], result['points'], result['league'], result['id'])
+        league = league_repository.select(result['league_id'])
+        team = Team(result['city'], result['name'], result['points'], league, result['id'])
     return team
 
 def delete_all():
