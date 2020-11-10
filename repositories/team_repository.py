@@ -4,7 +4,7 @@ from models.match import Match
 from models.league import League
 
 def save(team):
-    sql = "INSERT INTO teams(city, name, points) VALUES (%s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO teams(city, name, points, league) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [team.city, team.name, team.points, team.league]
     results = run_sql(sql, values)
     team.id = results[0]['id']
