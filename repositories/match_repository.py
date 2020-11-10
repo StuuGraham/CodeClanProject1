@@ -2,10 +2,11 @@ from db.run_sql import run_sql
 from models.team import Team
 from models.match import Match
 from models.league import League
+from repositories import league_repository, team_repository
 
 def save(match):
-    sql = "INSERT INTO matches(team1, team2, league, winner) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [match.team1, match.team2, match.league, match.winner]
+    sql = "INSERT INTO matches(team1_id, team2_id, league_id, winner) VALUES (%s, %s, %s, %s) RETURNING id"
+    values = [match.team1.id, match.team2.id, match.league.id, match.winner]
     results = run_sql(sql, values)
     match.id = results[0]['id']
     return match
@@ -17,7 +18,10 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        match = Match(row['team1'], row['team2'], row['league'], row['winner'], row['id'])
+        team1 = team_repository.select(row['team1_id'])
+        team2 = team_repository.select(row['team2_id'])
+        league = league_repository.select(row['league'])
+        match = Match(team1, team2, league, row['winner'], row['id'])
         matches.append(match)
     return matches
 
@@ -41,6 +45,6 @@ def delete(id):
     run_sql(sql, values)
 
 def update(match):
-    sql = "UPDATE matches SET (team1, team2, winner, league) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [match.team1, match.team2, match.league, match.winner, match.id]
+    sql = "UPDATE matches SET (team1_id, team2_id, league_id, winner) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [match.team1.id, match.team2.id, match.league.id, match.winner, match.id]
     run_sql(sql, values)
