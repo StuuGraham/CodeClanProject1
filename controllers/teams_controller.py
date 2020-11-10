@@ -42,7 +42,7 @@ def show_team(id):
 
 # EDIT
 # GET '/teams/<id>'
-@teams_blueprint.route("teams/<id>/edit", methods=["GET"])
+@teams_blueprint.route("/teams/<id>/edit", methods=["GET"])
 def edit_team(id):
     team = team_repository.select(id)
     leagues = league_repository.select_all()

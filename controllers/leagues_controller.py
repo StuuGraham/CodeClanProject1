@@ -31,7 +31,7 @@ def create_league():
 
 # SHOW
 # GET 'leagues/<id>'
-@leagues_blueprint.route("leagues/<id>", methods=["GET"])
+@leagues_blueprint.route("/leagues/<id>", methods=["GET"])
 def show_league(id):
     league = league_repository.select(id)
     return render_template("leagues/show.html", league=league)
