@@ -12,9 +12,9 @@ class Match:
     def play_match(self):
         winner = random.randint(0,1)
         if 0 == winner:
-            self.winner = self.team1
+            self.winner = self.team1 # and self.team1.points += 30
         else:
-            self.winner = self.team2
+            self.winner = self.team2 # and self.team2.points += 30
 
     # This will function similar to the Rock, Paper, Scissors homework.
     # Function should take in two teams and produce a winner at random.

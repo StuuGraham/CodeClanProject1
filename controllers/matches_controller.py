@@ -27,11 +27,13 @@ def new_match():
 # POST '/matches'
 @matches_blueprint.route("/matches", methods=["POST"])
 def create_match():
-    team1 = request.form["team1"]
-    team2 = request.form["team2"]
-    league = request.form["league"]
+    team1_id = request.form["team1_id"]
+    team2_id = request.form["team2_id"]
+    league_id = request.form["league_id"]
 
-    # league = league_repository.select(league_id) # ????
+    team1 = team_repository.select(team1_id)
+    team2 = team_repository.select(team2_id)
+    league = league_repository.select(league_id)
     match = Match(team1, team2, league)
     match.play_match()
     match_repository.save(match)
