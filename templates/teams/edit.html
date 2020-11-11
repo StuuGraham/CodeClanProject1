@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Rebrand Your Team!</h1>
+<section id="new-form">
+    <form action="/teams/{{team.id}}" method="POST">
+        <div>
+            <label for="city">Are You Moving City?</label>
+            <input type="text" id="city" name="city" value="{{team.city}}" required autofocus>
+        </div>
+        <div>
+            <label for="name">Is Your Team Changing Name?</label>
+            <input type="text" id="name" name="name" value="{{team.name}}" required autofocus>
+        </div>
+        <div>
+            <input type="number" name="points" value="{{team.points}}" hidden>
+        </div>
+        <div>
+            <label for="league">Is Your Team Changing League?</label>
+            <select name="league_id" id="league">
+                {% for league in leagues %}
+                <option value="{{league.id}}">{{league.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input class="rebrand-team-btn" type='submit' value="Rebrand">
+    </form>
+</section>
+{% endblock content %}

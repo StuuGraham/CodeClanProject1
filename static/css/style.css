@@ -103,6 +103,19 @@ body {
   margin-left: 600px;
 }
 
+.rebrand-btn {
+  text-align: center;
+  border: 1px solid goldenrod;
+  background-color: black;
+  opacity: 90%;
+  width: 160px;
+  min-height:20px;
+  padding: 5px;
+  line-height: 18px;
+  margin-bottom: 1px;
+  margin-left: 600px;
+}
+
 #new-form {
   border: 1px solid #ccc;
   background-color: transparent;
