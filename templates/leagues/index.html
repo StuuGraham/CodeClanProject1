@@ -1,1 +1,22 @@
 {% extends 'base.html' %}
+
+{% block content %}
+<h1> All Leagues </h1>
+
+<section id="leagues-table">
+    <table>
+        {% for league in leagues %}
+            <div class="leagues">
+                <div class="content">
+                    <a href="/leagues/{{league.id}}">{{league.name}} League</a>
+                    <br>
+                    <span class="season">{{league.year}} Season</span>
+                </div>
+            </div>
+           {% endfor %} 
+    </table>
+</section>
+<p class="new-league-btn">
+    <a class="btn btn--action" href="/leagues/new"> Create Your Own League!</a>
+</p>
+{% endblock %}

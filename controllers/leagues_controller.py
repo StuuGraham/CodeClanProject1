@@ -9,14 +9,14 @@ leagues_blueprint = Blueprint("leagues", __name__)
 @leagues_blueprint.route("/leagues")
 def leagues():
     leagues = league_repository.select_all()
-    return render_template("leagues/index.html", all_leagues=leagues)
+    return render_template("leagues/index.html", leagues=leagues)
 
 # NEW
 # GET '/leagues/new'
 @leagues_blueprint.route("/leagues/new", methods=["GET"])
 def new_league():
     teams = team_repository.select_all()
-    return render_template("leagues/new.html", all_teams=teams)
+    return render_template("leagues/new.html", teams=teams)
 
 # CREATE
 # POST '/leagues'
