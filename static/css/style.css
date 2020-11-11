@@ -248,3 +248,7 @@ body {
   margin-bottom: 1px;
   margin-left: 600px;
 }
+
+iframe {
+  border: goldenrod;
+}

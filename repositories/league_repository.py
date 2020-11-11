@@ -44,3 +44,15 @@ def update(league):
     sql = "UPDATE leagues SET (name, year) = (%s, %s) WHERE id = %s"
     values = [league.name, league.year, league.id]
     run_sql(sql, values)
+
+# def teams(league):
+#     teams = []
+#     sql = "SELECT teams.* FROM teams INNER JOIN matches ON matches.team_id = team.id WHERE visits.location_id = %s"
+#     values = [league.id]
+#     results = run_sql(sql, values)
+
+#     for row in results:
+#         team = Team(row['city'], row['name'], row['points'], row['league'], row['id'])
+#         teams.append(team)
+
+#     return teams

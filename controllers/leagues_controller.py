@@ -34,7 +34,8 @@ def create_league():
 @leagues_blueprint.route("/leagues/<id>", methods=["GET"])
 def show_league(id):
     league = league_repository.select(id)
-    return render_template("leagues/show.html", league=league)
+    teams = team_repository.select_all()
+    return render_template("leagues/show.html", league=league, teams=teams)
 
 # # DELETE
 # # POST '/leagues/<id>'

@@ -1,1 +1,26 @@
 {% extends 'base.html' %}
+
+{% block content %}
+<h1> {{league.name}} League </h1>
+
+<h3> {{league.year}} Table </h3>
+
+<section id="league-table">
+    <table>
+        <tr>
+            <th>City</th>
+            <th>Name</th>
+            <th>Points</th>
+        </tr>
+        {% for team in teams %}
+        {% if team.league.id == league.id %} 
+        <tr>
+            <td><a href="/teams/{{team.id}}">{{team.city}}</a></td>
+            <td>{{team.name}}</td>  
+            <td>{{team.points}}</td>
+        </tr>
+        {% endif %}       
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}

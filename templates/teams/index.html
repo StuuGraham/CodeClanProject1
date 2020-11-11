@@ -10,9 +10,10 @@
                 <div class="content">
                     <a href="/teams/{{team.id}}">{{team.city}} {{team.name}}</a>
                     <br>
+                    <span class="league"> Playing In The </span>
+                    <br>
                     <span class="league">{{team.league.name}} League</span>
                     <br>
-                    <span class="points">{{team.points}} Points</span>
                     </div>
                     <div class="buttons">
                         <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
