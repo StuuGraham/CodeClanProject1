@@ -14,7 +14,7 @@ def save(team):
 def select_all():
     teams = []
 
-    sql = "SELECT * FROM teams"
+    sql = "SELECT * FROM teams ORDER BY points DESC"
     results = run_sql(sql)
 
     for row in results:

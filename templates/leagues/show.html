@@ -6,19 +6,23 @@
 <h3> {{league.year}} Table </h3>
 
 <section id="league-table">
-    <table>
-        <tr>
-            <th>City</th>
-            <th>Name</th>
-            <th>Points</th>
-        </tr>
+    <table class="sortable">
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Name</th>
+                <th>Points</th>
+            </tr>
+        </thead>
         {% for team in teams %}
         {% if team.league.id == league.id %} 
-        <tr>
-            <td><a href="/teams/{{team.id}}">{{team.city}}</a></td>
-            <td>{{team.name}}</td>  
-            <td>{{team.points}}</td>
-        </tr>
+        <tbody>
+            <tr>
+                <td><a href="/teams/{{team.id}}">{{team.city}}</a></td>
+                <td>{{team.name}}</td>  
+                <td>{{team.points}}</td>
+            </tr>
+        </tbody>
         {% endif %}       
         {% endfor %}
     </table>
