@@ -7,6 +7,11 @@ body {
     padding: 0px;
     margin: 0px;
   }
+
+  iframe {
+      margin: 0 auto;
+      display: block;
+  }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: "Lucida Console", Monaco, monospace;
