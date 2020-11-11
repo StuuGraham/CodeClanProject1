@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> Game On!</h1>
+    <section id="new-form">
+        <form action="/matches" method="POST">
+            <div>
+                <label for="team1">Choose Your Team:</label>
+                <select name="team_id" id="team">
+                    {% for team in teams %}
+                    <option value="{{team.id}}">{{team.city}} {{team.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="team2">Choose Your Opponent:</label>
+                <select name="team_id" id="team">
+                    {% for team in teams %}
+                    <option value="{{team.id}}">{{team.city}} {{team.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="league">What League Will The Match Be Played In?</label>
+                <select name="league_id" id="league">
+                    {% for league in leagues %}
+                    <option value="{{league.id}}">{{league.name}}</option>
+                    {% endfor %}
+                </select> 
+            </div>
+            <input class="create-game-btn" type='submit' value="Time To Play">
+        </form>
+    </section>
+{% endblock content %}

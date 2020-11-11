@@ -143,6 +143,12 @@ body {
   margin-bottom: 10px;
 }
 
+.create-game-btn {
+  margin-left: 110px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .match {
   text-align: center;
   justify-content: center;
