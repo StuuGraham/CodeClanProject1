@@ -4,8 +4,53 @@
 <h1> {{team.city}} {{team.name}}</h1>
 
 <h3>Team Info</h3>
-<ul>
-        <li> {{team.city}} play in the {{team.league.name}} League</li>
-        <li> They scored {{team.points}} points in the {{team.league.year}} season!</li>
-</ul>
+<br>
+<p>{{team.city}} play in the {{team.league.name}} League</p>
+<p>They scored {{team.points}} points in the {{team.league.year}} season!</p>
+<br>
+<h3>Matches Played</h3>
+<br>
+<section id="matches-played">
+        <table>
+                {% for match in matches %}
+                {% if match.team1.id == team.id %}
+                <div class ="match">
+                        <div class="content">
+                            <span class="matchup"> {{match.team1.city}} {{match.team1.name}}</span>
+                            <br>
+                            <span class="VS"> VS </span>
+                            <br>
+                            <span class="matchup"> {{match.team2.city}} {{match.team2.name}}</span>
+                            <br>
+                            <span class="league"> In The {{match.league.name}} League</span>
+                            <br>
+                            <span class="winner"> {{match.winner}} Won!</span>
+                            <br>
+                            <span class="GGs"> GGs</span>
+                        </div>
+                </div>  
+                {% elif match.team2.id == team.id %}
+                <div class ="match">
+                        <div class="content">
+                            <span class="matchup"> {{match.team1.city}} {{match.team1.name}}</span>
+                            <br>
+                            <span class="VS"> VS </span>
+                            <br>
+                            <span class="matchup"> {{match.team2.city}} {{match.team2.name}}</span>
+                            <br>
+                            <span class="league"> In The {{match.league.name}} League</span>
+                            <br>
+                            <span class="winner"> {{match.winner}} Won!</span>
+                            <br>
+                            <span class="GGs"> GGs</span>
+                        </div>
+                </div>  
+                {% endif %}
+                {% endfor %}
+        </table>
+</section>
+
+
+
+
 {% endblock content %}

@@ -39,7 +39,8 @@ def create_team():
 def show_team(id):
     team = team_repository.select(id)
     league = league_repository.select_all()
-    return render_template("teams/show.html", team=team, league=league)
+    matches = match_repository.select_all()
+    return render_template("teams/show.html", team=team, league=league, matches=matches)
 
 # EDIT
 # GET '/teams/<id>'
