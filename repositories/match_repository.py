@@ -21,7 +21,7 @@ def select_all():
     for row in results:
         team1 = team_repository.select(row['team1_id'])
         team2 = team_repository.select(row['team2_id'])
-        league = league_repository.select(row['league'])
+        league = league_repository.select(row['league_id'])
         match = Match(team1, team2, league, row['winner'], row['id'])
         matches.append(match)
     return matches

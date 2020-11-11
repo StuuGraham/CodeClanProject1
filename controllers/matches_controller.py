@@ -13,7 +13,7 @@ matches_blueprint = Blueprint("matches", __name__)
 @matches_blueprint.route("/matches")
 def matches():
     matches = match_repository.select_all()
-    return render_template("matches/index.html", all_matches=matches)
+    return render_template("matches/index.html", matches=matches)
 
 # NEW
 # GET '/matches/new'
@@ -21,7 +21,7 @@ def matches():
 def new_match():
     teams = team_repository.select_all()
     leagues = league_repository.select_all()
-    return render_template("matches/new.html", all_teams=teams, all_leagues=leagues)
+    return render_template("matches/new.html", teams=teams, leagues=leagues)
 
 # CREATE
 # POST '/matches'

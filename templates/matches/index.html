@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Matches Played </h1>
+
+<section id="matches-table">
+    <table>
+        {% for match in matches %}
+            <div class ="match">
+                <div class="content">
+                    <span class="matchup"> {{match.team1.city}} {{match.team1.name}}</span>
+                    <br>
+                    <span class="VS"> VS </span>
+                    <br>
+                    <span class="matchup"> {{match.team2.city}} {{match.team2.name}}</span>
+                    <br>
+                    <span class="winner"> {{match.winner}} Won!</span>
+                    <br>
+                    <span class="GGs"> GGs</span>
+                </div>
+            </div>  
+        {% endfor %}
+    </table>
+</section>
+<p class="new-match-btn">
+    <a class="btn btn--action" href="/matches/new"> Make Your Own Matchup!</a>
+</p>
+{% endblock %}
